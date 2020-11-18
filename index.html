@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+         //create a function computerPlay
+         function computerPlay() {
+        //create a range of options for a computer to choose from (rock, paper, scissors)
+        let options= ["ROCK", "PAPER", "SCISSORS"];
+        //choose a random option from those three
+        let random= options[Math.floor(Math.random()* options.length)];
+        return random;
+        }
+        //Create a function singleRound with two parameters 
+        function singleRound(playerSelection, computerSelection) {
+        //Convert player's choice to upper case
+            playerSelection=playerSelection.toUpperCase();
+        // if players choice is the same as computers choice
+            if (playerSelection===computerSelection) {
+        //return "It's a draw! play again!"
+            return message= "It's a draw! play again!";
+            }
+        //otherwise, if a player selected rock 
+        //if computer selected paper return "You lose! Paper beats Rock"
+        //if computer selected scissors return "You win! Rock beats Scissors"
+
+        //otherwise if a player selected scissors and computer selected paper
+        //return "You win! Scissors beat paper!"
+        //if a player selected scissors and computer selected rock "
+        //return "You lose! Rock beats Scissors!"
+
+        //otherwise if a player selected paper and computer selected rock
+        //return "You win! Paper beats Rock!"
+        //if a player selected paper and computer selected scissors
+        //return "You lose! Scissors beat Paper!"
+        }
+        </script>
+    </body>
+</html>
