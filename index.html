@@ -12,26 +12,47 @@
         }
         //Create a function singleRound with two parameters 
         function singleRound(playerSelection, computerSelection) {
+            let message
         //Convert player's choice to upper case
-            playerSelection=playerSelection.toUpperCase();
+            playerChoice=playerSelection.toUpperCase();
         // if players choice is the same as computers choice
-            if (playerSelection===computerSelection) {
+            if (playerChoice===computerSelection) {
         //return "It's a draw! play again!"
             return message= "It's a draw! play again!";
+            //otherwise, if a player selected rock 
+            //if computer selected paper return "You lose! Paper beats Rock"
+            } else if (playerChoice==="ROCK"&&computerSelection==="SCISSORS") {
+            return message= "You win! Rock beats Scissors!";
+            //if computer selected scissors return "You win! Rock beats Scissors"
+            } else if (playerChoice==="ROCK"&&computerSelection==="PAPER") {
+                return message= "You lose! Paper beats Rock";
+
+            //otherwise if a player selected scissors and computer selected paper
+            //return "You win! Scissors beat paper!"
+            } else if (playerChoice==="SCISSORS"&&computerSelection==="PAPER") {
+                return message= "You win! Scissors beat Paper!";
+
+            //if a player selected scissors and computer selected rock "
+            //return "You lose! Rock beats Scissors!"
+            } else if (playerChoice==="SCISSORS"&&computerSelection==="ROCK") {
+                return message= "You lose! Rock beats Scissors!";
+
+            //otherwise if a player selected paper and computer selected rock
+            //return "You win! Paper beats Rock!"
+            }else if (playerChoice==="PAPER"&&computerSelection==="ROCK") {
+                return message= "You win! Paper beats Rock!";
+
+            //if a player selected paper and computer selected scissors
+            //return "You lose! Scissors beat Paper!"
+            } else if (playerChoice==="PAPER"&&computerSelection==="SCISSORS") {
+                return message ="You lose! Scissors beat Paper!"
+            } else {
+                return message = "something went wrong :/"
             }
-        //otherwise, if a player selected rock 
-        //if computer selected paper return "You lose! Paper beats Rock"
-        //if computer selected scissors return "You win! Rock beats Scissors"
 
-        //otherwise if a player selected scissors and computer selected paper
-        //return "You win! Scissors beat paper!"
-        //if a player selected scissors and computer selected rock "
-        //return "You lose! Rock beats Scissors!"
-
-        //otherwise if a player selected paper and computer selected rock
-        //return "You win! Paper beats Rock!"
-        //if a player selected paper and computer selected scissors
-        //return "You lose! Scissors beat Paper!"
+            const playerSelection="rock";
+            const computerSelection=computerPlay();
+            console.log (singleRound(playerSelection, computerSelection));
         }
         </script>
     </body>
