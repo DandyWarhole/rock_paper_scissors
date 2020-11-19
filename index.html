@@ -18,7 +18,7 @@
         // if players choice is the same as computers choice
             if (playerChoice===computerSelection) {
         //return "It's a draw! play again!"
-            return message= "It's a draw! play again!";
+            return message= "It's a draw! Play again!";
             //otherwise, if a player selected rock 
             //if computer selected paper return "You lose! Paper beats Rock"
             } else if (playerChoice==="ROCK"&&computerSelection==="SCISSORS") {
@@ -49,11 +49,12 @@
             } else {
                 return message = "something went wrong :/"
             }
-
-            const playerSelection="rock";
-            const computerSelection=computerPlay();
-            console.log (singleRound(playerSelection, computerSelection));
         }
+        const playerSelection='Rock';
+        const computerSelection=computerPlay();
+        console.log (singleRound(playerSelection, computerSelection));
+
+        
         </script>
     </body>
 </html>
