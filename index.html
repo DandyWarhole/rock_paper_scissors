@@ -12,17 +12,21 @@
         }
         //Create a function singleRound with two parameters 
         function singleRound(playerSelection, computerSelection) {
-            let message
-        //Convert player's choice to upper case
+            let message;
+
+        //Convert player's choice to upper case, to make it case insensitive
             playerChoice=playerSelection.toUpperCase();
+
         // if players choice is the same as computers choice
             if (playerChoice===computerSelection) {
         //return "It's a draw! play again!"
             return message= "It's a draw! Play again!";
-            //otherwise, if a player selected rock 
-            //if computer selected paper return "You lose! Paper beats Rock"
+
+            //otherwise if a player selected rock, and 
+            //the computer selected paper return "You lose! Paper beats Rock"
             } else if (playerChoice==="ROCK"&&computerSelection==="SCISSORS") {
             return message= "You win! Rock beats Scissors!";
+
             //if computer selected scissors return "You win! Rock beats Scissors"
             } else if (playerChoice==="ROCK"&&computerSelection==="PAPER") {
                 return message= "You lose! Paper beats Rock";
@@ -45,7 +49,9 @@
             //if a player selected paper and computer selected scissors
             //return "You lose! Scissors beat Paper!"
             } else if (playerChoice==="PAPER"&&computerSelection==="SCISSORS") {
-                return message ="You lose! Scissors beat Paper!"
+                return message ="You lose! Scissors beat Paper!";
+
+            //otherwise, return a message notifying that the code is not working
             } else {
                 return message = "something went wrong :/"
             }
@@ -53,6 +59,7 @@
         const playerSelection='Rock';
         const computerSelection=computerPlay();
         console.log (singleRound(playerSelection, computerSelection));
+
 
         
         </script>
