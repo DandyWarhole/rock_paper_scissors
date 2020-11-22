@@ -1,1 +1,3 @@
-# rock_paper_scissors
+1st part: This is the first project using Javascript from The Odin Project curriculum. It took me way less time than the previous one (making a webpage similar to google search) and i also had more fun doing it.
+I learned how to use simple Javscript to create a game played in the console, where user plays against the computer. User inputs their choice, and computer chooses its at random. The current version of the game does not have a workaround for wrong input (meaning other than rock, paper or scissors). I need to remember to google for solutions that i believe are easy but seem elusive, since there is usually no point trying to figure out the unknown by myself.
+I also decided to do it without loops, since i had a vague idea how they work and wanted to see if i can do it without them, so i can appreciate them better in the future.
