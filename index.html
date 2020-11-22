@@ -10,8 +10,15 @@
         let random= options[Math.floor(Math.random()* options.length)];
         return random;
         }
+
+        //Create a variable to store a result of the round
+        let result;
+
+
         //Create a function singleRound with two parameters 
         function singleRound(playerSelection, computerSelection) {
+
+            //Create a variable for a message
             let message;
 
         //Convert player's choice to upper case, to make it case insensitive
@@ -20,45 +27,149 @@
         // if players choice is the same as computers choice
             if (playerChoice===computerSelection) {
         //return "It's a draw! play again!"
-            return message= "It's a draw! Play again!";
+            return result= "It's a draw! Play again!";
 
             //otherwise if a player selected rock, and 
             //the computer selected paper return "You lose! Paper beats Rock"
             } else if (playerChoice==="ROCK"&&computerSelection==="SCISSORS") {
-            return message= "You win! Rock beats Scissors!";
+            return result= "You win!";
+            return message= "Rock beats Scissors!";
+            
 
             //if computer selected scissors return "You win! Rock beats Scissors"
             } else if (playerChoice==="ROCK"&&computerSelection==="PAPER") {
-                return message= "You lose! Paper beats Rock";
+                return result = "You lose!";
+                return message= "Paper beats Rock";
 
             //otherwise if a player selected scissors and computer selected paper
             //return "You win! Scissors beat paper!"
             } else if (playerChoice==="SCISSORS"&&computerSelection==="PAPER") {
-                return message= "You win! Scissors beat Paper!";
+                return result= "You win!";
+                return message= "Scissors beat Paper!";
 
             //if a player selected scissors and computer selected rock "
             //return "You lose! Rock beats Scissors!"
             } else if (playerChoice==="SCISSORS"&&computerSelection==="ROCK") {
-                return message= "You lose! Rock beats Scissors!";
+                return result="You lose!";
+                return message= "Rock beats Scissors!";
 
             //otherwise if a player selected paper and computer selected rock
             //return "You win! Paper beats Rock!"
             }else if (playerChoice==="PAPER"&&computerSelection==="ROCK") {
-                return message= "You win! Paper beats Rock!";
+                return result="You win!";
+                return message= "Paper beats Rock!";
 
             //if a player selected paper and computer selected scissors
             //return "You lose! Scissors beat Paper!"
             } else if (playerChoice==="PAPER"&&computerSelection==="SCISSORS") {
-                return message ="You lose! Scissors beat Paper!";
+                return result="You lose!";
+                return message ="Scissors beat Paper!";
 
             //otherwise, return a message notifying that the code is not working
             } else {
-                return message = "something went wrong :/"
+                return result = "something went wrong :/"
             }
         }
-        const playerSelection='Rock';
-        const computerSelection=computerPlay();
-        console.log (singleRound(playerSelection, computerSelection));
+        
+        //Create the variable to store the score of the user
+        let userScore=0;
+        //create the variable to store the score of the computer
+        let computerScore=0;
+
+
+        //Create function called game () with no parameters
+        function game () {
+        
+        //Ask the user for input 
+        choice= prompt("It\'s your time to shine! Rock, Paper, or Scissors?");
+        
+        //Run the singleRound function
+        singleRound (choice, computerPlay());
+        console.log (singleRound (choice, computerPlay()));
+
+        //if the computer won, add 1 to its score
+        if (result==="You lose!") {
+            computerScore++;
+
+        //if the user won, add 1 to his score
+        } else if (result==="You win!") {
+            userScore++;
+        
+        //If it's a draw, ask to play again
+        } else if (result==="It's a draw! Play again!") {
+            console.log("No points in this round!")
+        }
+        
+        
+        //Print the results 
+        console.log(`Time to present the scoreboard! 
+        User's Score is ${userScore}!
+        Computer Score is ${computerScore}!`); 
+        
+        //run the code again, 4 times.
+        //(1)
+        choice= prompt("It\'s your time to shine! Rock, Paper, or Scissors?");
+        singleRound (choice, computerPlay());
+        console.log (singleRound (choice, computerPlay()));
+        if (result==="You lose!") {
+            computerScore++;
+        } else if (result==="You win!") {
+            userScore++;
+        } else if (result==="It's a draw! Play again!") {
+            console.log("No points in this round!")
+        }
+        console.log(`Time to present the scoreboard! 
+        User's Score is ${userScore}!
+        Computer Score is ${computerScore}!`);
+        //(2)
+        choice= prompt("It\'s your time to shine! Rock, Paper, or Scissors?");
+        singleRound (choice, computerPlay());
+        console.log (singleRound (choice, computerPlay()));
+        if (result==="You lose!") {
+            computerScore++;
+        } else if (result==="You win!") {
+            userScore++;
+        } else if (result==="It's a draw! Play again!") {
+            console.log("No points in this round!")
+        }
+        console.log(`Time to present the scoreboard! 
+        User's Score is ${userScore}!
+        Computer Score is ${computerScore}!`);
+        //(3)
+        choice= prompt("It\'s your time to shine! Rock, Paper, or Scissors?");
+        singleRound (choice, computerPlay());
+        console.log (singleRound (choice, computerPlay()));
+        if (result==="You lose!") {
+            computerScore++;
+        } else if (result==="You win!") {
+            userScore++;
+        } else if (result==="It's a draw! Play again!") {
+            console.log("No points in this round!")
+        }
+        console.log(`Time to present the scoreboard! 
+        User's Score is ${userScore}!
+        Computer Score is ${computerScore}!`);
+        //(4)
+        choice= prompt("It\'s your time to shine! Rock, Paper, or Scissors?");
+        singleRound (choice, computerPlay());
+        console.log (singleRound (choice, computerPlay()));
+        if (result==="You lose!") {
+            computerScore++;
+        } else if (result==="You win!") {
+            userScore++;
+        } else if (result==="It's a draw! Play again!") {
+            console.log("No points in this round!")
+        }
+
+        //Print the final result
+        console.log(`The game has come to an end! 
+        Pleeeeeease weeeeeelcome: FINAL RESULTS
+        User's Score is ${userScore}!
+        Computer Score is ${computerScore}!
+        Thank you for the participation. :)`);
+        }
+        game ();
+        
 
 
         
